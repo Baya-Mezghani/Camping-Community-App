@@ -7,7 +7,7 @@ import { updateUser } from "../controllers/User.js"
 const router = express.Router()
 
 
-router.post('/create', CreateUser)
+router.post('/signup', CreateUser)
 router.put('/update/:id', updateUser)
 router.post('/login', loginUser)
 

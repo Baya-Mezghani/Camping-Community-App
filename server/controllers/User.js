@@ -1,13 +1,28 @@
 import User from "../models/User.js"
 import utils from "../utils/auth.js";
 
-export const CreateUser =  async (req,res) => {
-    const userData = req.body
-    const user = await User.create(userData);
+export const CreateUser = async (req, res) => {
+    try {
+      const userData = req.body;
+      // Create the user
+      const user = await User.create(userData);
+  
+      // Generate token
+      const token = generateToken(user);
+  
+      res.status(201).json({ token, user });
+    } catch (error) {
+      // Handle error
+      console.error(error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  };
+  
+  const generateToken = (user) => {
     const token = utils.signToken(user);
-    return { token, user };
-}
-
+    return token;
+  };
+  
 
 export const loginUser =  async (req,res) => {
     const { email,password } = req.body
@@ -28,13 +43,16 @@ export const loginUser =  async (req,res) => {
         })}
 
     const token = utils.signToken(user);
-    return { token, user };
-    }
+    return res.status(200).json({
+        user:user,
+        token,
+        id: user._id,
+        }) }
     catch (error) {
         console.log(error)
         return res.status(404).json({
             ok: false,
-            msg: 'An error occured, contact an administrator',
+            msg: 'An error occured',
         })
 
 }

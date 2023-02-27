@@ -7,7 +7,7 @@ export const commentPost = async (req, res) => {
 
     const updatedPost = await Post.findOneAndUpdate(
         { _id: id },
-        { $push: { comments: { value, username: Comment.User.username }}},
+        { $push: { comments: { value, username: req.user.username }}},
         { new: true, runValidators: true }
     );
 

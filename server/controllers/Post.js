@@ -29,19 +29,20 @@ export const createPost = async (req, res) => {
 
 export const deletePost = async (req, res) => {
     const { id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
-
+    try {
     await Post.findByIdAndRemove(id);
-
     res.json({ message: "Post deleted successfully." });
+    }
+    catch (error) {
+        res.status(409).json({ message: error.message });
+    }
 }
 
 export const getPosts = async (req, res) => { 
     try {
         const posts = await Post.find().sort({ createdAt: -1 });
                 
-        res.status(200).json(postMessages);
+        return res.status(200).json({posts});
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -51,9 +52,9 @@ export const getPost = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const post = await PostMessage.findById(id);
+        const post = await Post.findById(id);
         
-        res.status(200).json(post);
+        return res.status(200).json(post);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -62,9 +63,9 @@ export const getPost = async (req, res) => {
 
 export const likePost = async (req, res) => {
     const { id } = req.params;
+    const { username } = req.body;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
-    
+    try {    
     const post = await Post.findById(id);
 
     if (post) {
@@ -81,4 +82,8 @@ export const likePost = async (req, res) => {
         await post.save();    
     res.json(post);
 }
+    }
+    catch (error) {
+        res.status(404).json({ message: error.message });
+    }
 }
