@@ -55,7 +55,6 @@ Users can also use the app to plan and organize camping trips, and even ask for 
 
 # Contact
 
-You can contact me for any question at [mezghannibaya@gmail.com]
-(mailto:mezghannibaya@gmail.com)
-Visit my GitHub to view more of my works at [github.com/Baya-Mezghani]
-(https://github.com/Baya-Mezgha)
+You can contact me for any question at mezghannibaya@gmail.com
+<br>
+Visit my GitHub to view more of my works at https://github.com/Baya-Mezghani
