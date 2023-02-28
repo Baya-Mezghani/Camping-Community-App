@@ -7,36 +7,55 @@ Users can also use the app to plan and organize camping trips, and even ask for 
 # Table Of Contents
 
 • Technologies Used
+<br>
 • Features
+<br>
 • Installation
+<br>
 • Contact 
 
 # Technologies Used
 
 • Database: MongoDB
+<br>
 • Server Framework: Express.js
+<br>
 • Client Framework: React.js
+<br>
 • Server Environment: Node.js
+<br>
 • CSS Framework: Tailwind CSS
 
 # Features
 
 • User authentication (log in/sign up)
+<br>
 • View posts
+<br>
 • Add new posts
+<br>
 • Delete posts
+<br>
 • Add comments
+<br>
 • Like posts
 
 # Installation
 
 1 • Clone the repository
+<br>
 2 • Install dependencies : npm install
-3 • Create .env file
+<br>
+3 • Create `.env` file
+<br>
 4 • Start the server : npm start
+<br>
 5 • Start the client : npm start
+<br>
 
 # Contact
 
-You can contact me for any question at mezghannibaya@gmail.com
-Visit my GitHub to view more of my works at github.com/Baya-Mezghani
+You can contact me for any question at [mezghannibaya@gmail.com]
+(mailto:mezghannibaya@gmail.com)
+Visit my GitHub to view more of my works at [github.com/Baya-Mezghani]
+(https://github.com/Baya-Mezgha)
