@@ -3,11 +3,11 @@ import Comment from "../models/Comment.js"
 
 export const commentPost = async (req, res) => {
     const { id } = req.params;
-    const { value } = req.body;
+    const { commentBody, author, username } = req.body;
 
     const updatedPost = await Post.findOneAndUpdate(
         { _id: id },
-        { $push: { comments: { value, username: req.user.username }}},
+        { $push: { comments: { commentBody,username,author }}},
         { new: true, runValidators: true }
     );
 

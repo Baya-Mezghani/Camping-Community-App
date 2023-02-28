@@ -39,7 +39,7 @@ const userSchema = new Schema(
 		avatar: {
 			type: String,
 			trim: true,
-			default: 'https://images.unsplash.com/photo-1529252233991-9ea40cd5ab41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80'
+			default: 'https://images.unsplash.com/photo-1565588496723-63494874b143?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=866&q=80'
 		},
 	},
 	{

@@ -31,19 +31,20 @@ export const loginUser =  async (req,res) => {
         const user = await User.findOne({ email });
 
      if (!user) {
-         return res.status(200).json({ ok: false, msg: 'Email not found' })
+         return res.status(400).json({ ok: false, msg: 'Email not found' })
         }
 
     const correctPw = await user.isCorrectPassword(password);
 
     if (!correctPw) {
-        return res.status(200).json({
+        return res.status(400).json({
             ok: false,
             msg: 'Incorrect Password',
         })}
 
     const token = utils.signToken(user);
     return res.status(200).json({
+        ok:true,
         user:user,
         token,
         id: user._id,
