@@ -48,9 +48,9 @@ Users can also use the app to plan and organize camping trips, and even ask for 
 <br>
 3 • Create `.env` file
 <br>
-4 • Start the server : npm start
+4 • Start the server : `npm start`
 <br>
-5 • Start the client : npm start
+5 • Start the client : `npm start`
 <br>
 
 # Contact
