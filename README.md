@@ -44,7 +44,7 @@ Users can also use the app to plan and organize camping trips, and even ask for 
 
 1 • Clone the repository
 <br>
-2 • Install dependencies : npm install
+2 • Install dependencies : `npm install`
 <br>
 3 • Create `.env` file
 <br>
